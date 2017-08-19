@@ -1,0 +1,17 @@
+<div>
+  <select [(ngModel)]="selectedSection">
+    <!-- This is where we are displaying all the options for dropdown -->
+    <option *ngFor="let section of sections" [value]="section">{{section}}</option>
+
+  </select>
+  <hr>
+  <!-- Displayong the selected value from dropdown -->
+  <span>Selected Section: <strong>{{selectedSection}}</strong></span>
+
+  <!-- Displaying the "Basic Component" if `selectedSection` variable is "BasicInfo" -->
+  <basic-info-component *ngIf="selectedSection=='BasicInfo'"></basic-info-component>
+  <!-- Displaying the "Address Component" if `selectedSection` variable is "AddressInfo" -->
+
+  <address-info-component *ngIf="selectedSection=='AddressInfo'"></address-info-component>
+
+</div>
